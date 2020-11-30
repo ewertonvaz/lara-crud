@@ -23,13 +23,13 @@ class EquipamentoFactory extends Factory
     {
         $fabricantes = ['Asus', 'Itautec', 'Lenovo', 'Epson', 'HP'];
         $tipos = ['Computador', 'Impressora', 'Scanner', 'Notebook'];
-        $tipo = $tipos[rand(0,3)];
+        $fabricante = $fabricantes[rand(0, count($fabricantes)-1)];
+        $tipo = $tipos[rand(0, count($tipos)-1)];
         $modelo = strtoupper($this->faker->bothify('??-###?'));
-        $fabricante = $fabricantes[rand(0,4)];
         return [
           'tipo' => $tipo,
      	  'modelo' => $modelo,
-     	  'fabricante' => $fabricante
+     	  'fabricante' => $fabricante,
         ];
     }
 }

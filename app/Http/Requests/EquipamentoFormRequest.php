@@ -28,7 +28,7 @@ class EquipamentoFormRequest extends FormRequest
         return [
             //'title' => 'required|unique:posts|max:255',
             'tipo' => 'required',
-            'modelo' => 'required',
+            'modelo' => 'required|max:15',
             'fabricante' => 'required',
         ];
     }
@@ -37,6 +37,7 @@ class EquipamentoFormRequest extends FormRequest
     	return [
            'tipo.required' => 'O TIPO do Equipamento deve ser preenchido',
             'modelo.required' => 'O MODELO do Equipamento deve ser preenchido',
+            'modelo.max' => 'O campo MODELO pode conter no máximo 15 caracteres',
             'fabricante.required' => 'O FABRICANTE do Equipamento deve ser preenchido',
     	//'nome.unique' => 'J&aacute; existe uma categoria com este Nome',
     	//'required' => 'O :attribute deve ser preenchido'

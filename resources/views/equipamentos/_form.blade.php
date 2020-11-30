@@ -25,23 +25,25 @@
     @if ($form_mode == "edit")
         @method('PUT')
     @endif
+    {{-- @form_field('text,tipo,Tipo Equipamento') --}}
     <div>
         <label for="tipo">Tipo Equipamento</label>
-        <input type="text" id="tipo" name="tipo" {{isset($eqp) ? 'value='.$eqp->tipo : ''}} {{$form_mode == "delete" ? "disabled" : ""}}>
+        <input type="text" id="tipo" name="tipo" value="{{isset($eqp) ? $eqp->tipo : old('tipo')}}" {{$form_mode == "delete" ? "disabled" : ""}}>
         @error('tipo')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+
     <div>
         <label for="modelo">Modelo Equipamento</label>
-        <input type="text" id="modelo" name="modelo" {{isset($eqp) ? 'value='.$eqp->modelo : ''}} {{$form_mode == "delete" ? "disabled" : ""}}>
+        <input type="text" id="modelo" name="modelo" value="{{isset($eqp) ? $eqp->modelo : old('modelo')}}" {{$form_mode == "delete" ? "disabled" : ""}}>
         @error('modelo')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
     <div>
         <label for="fabricante">Fabricante Equipamento</label>
-        <input type="text" id="fabricante" name="fabricante" {{isset($eqp) ? 'value='.$eqp->fabricante : ''}} {{$form_mode == "delete" ? "disabled" : ""}}>
+        <input type="text" id="fabricante" name="fabricante" value="{{isset($eqp) ? $eqp->fabricante : old('fabricante')}}" {{$form_mode == "delete" ? "disabled" : ""}}>
         @error('fabricante')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror

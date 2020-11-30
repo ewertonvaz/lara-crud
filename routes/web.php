@@ -35,3 +35,23 @@ Route::get('/equipamento/edit/{equipamento}', function (App\Models\Equipamento $
     }
 	return view('equipamentos.edit', ['eqp' => $equipamento]);
 })->name('equipamento.edit');
+
+Route::resource('/setor', 'SetoresController')->except([
+    'show', 'edit'
+]);
+
+Route::get('/setor/delete/{setor}', function (App\Models\Setor $setor) {
+    if(!session()->has('redirect_to'))
+    {
+        session(['redirect_to' => url()->previous()]);
+    }
+	return view('setores.destroy', ['setor' => $setor]);
+})->name('setor.delete');
+
+Route::get('/setor/edit/{setor}', function (App\Models\Setor $setor) {
+    if(!session()->has('redirect_to'))
+    {
+        session(['redirect_to' => url()->previous()]);
+    }
+	return view('setores.edit', ['setor' => $setor]);
+})->name('setor.edit');
