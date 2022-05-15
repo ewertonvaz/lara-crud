@@ -2,9 +2,22 @@
 ## versão 1.0
 após clonar execute:
 
-php artisan migrate --seed
+```
+> composer update
 
-php artisan serve
+> touch ./database/database.sqlite (se estiver usando o GIT Bash)
+
+> cp ./.env.example ./.env
+
+Edite o arquivo .env para cofigurar o banco de dados SQLite
+	DB_CONNECTION=sqlite
+
+> php artisan key:generate
+
+> php artisan migrate --seed
+
+> php artisan serve
+```
 
 
 
