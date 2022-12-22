@@ -1,6 +1,10 @@
 # CRUD Laravel 8
-## versão 1.0
-após clonar execute:
+
+## versão 2.0
+
+### Inclusão de gráficos na Home Page
+
+Após clonar execute:
 
 ```
 > composer update
@@ -19,9 +23,6 @@ Edite o arquivo .env para cofigurar o banco de dados SQLite
 > php artisan serve
 ```
 
+Em seguida visite o link:
 
-
-Em seguida visite os links:
-
-http://localhost:8000/equipamento
-http://localhost:8000/setor
+http://localhost:8000/
