@@ -87,7 +87,7 @@ class EquipamentosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Equipamento $equipamento, EquipamentoFormRequest $request)
-        {   
+    {   
         if (! $request->has('cancel') ){
             $equipamento->tipo = $request->input('tipo');
             $equipamento->modelo = $request->input('modelo');
